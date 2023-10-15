@@ -134,22 +134,36 @@ const fruitsImageUrl = 'https://github.com/tarasehdave/frontend/assets/39902320/
 const vegetablesImageUrl = 'https://github.com/tarasehdave/frontend/assets/39902320/6a847f79-2411-4ca6-b828-eee3be8aaceb';
 const breadImageUrl = 'https://github.com/tarasehdave/frontend/assets/39902320/8023b996-7101-4eab-8ad9-5677be088b65';
 
-// Load images (you need to implement this function)
 const backgroundImg = new Image();
 backgroundImg.src = backgroundImageUrl;
 backgroundImg.onload = () => {
+    // Image loaded successfully
     const fruitsImg = new Image();
     fruitsImg.src = fruitsImageUrl;
     fruitsImg.onload = () => {
+        // Fruits image loaded successfully
         const vegetablesImg = new Image();
         vegetablesImg.src = vegetablesImageUrl;
         vegetablesImg.onload = () => {
+            // Vegetables image loaded successfully
             const breadImg = new Image();
             breadImg.src = breadImageUrl;
             breadImg.onload = () => {
-                // All images are loaded, initialize the background
+                // Bread image loaded successfully
                 const background = initBackground(canvas, backgroundImg, 2, 1, 0, 2, backgroundImg.width);
             };
+            // Handle error for bread image
+            breadImg.onerror = handleImageError;
         };
+        // Handle error for vegetables image
+        vegetablesImg.onerror = handleImageError;
     };
+    // Handle error for fruits image
+    fruitsImg.onerror = handleImageError;
 };
+// Handle error for background image
+backgroundImg.onerror = handleImageError;
+
+function handleImageError(event) {
+    console.error('Error loading image:', event.target.src);
+}
