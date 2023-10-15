@@ -75,7 +75,6 @@ nav ul li a {
 </body>
 </html>
 
-%%javascript
 import GameObject from './GameObject.js';
 
 export class Background extends GameObject {
@@ -125,3 +124,32 @@ export function initBackground(canvas, image, gameSpeed, speedRatio, initialXPos
 
     return background;
 }
+
+// Get canvas element
+const canvas = document.getElementById('canvas');
+
+// Actual Image URLS
+const backgroundImageUrl = 'https://github.com/tarasehdave/frontend/assets/39902320/e911966c-fd54-4b0a-8e81-89d80f4d9b0e';
+const fruitsImageUrl = 'https://github.com/tarasehdave/frontend/assets/39902320/d5f2df5a-833d-4357-bf75-f82fbba3b424';
+const vegetablesImageUrl = 'https://github.com/tarasehdave/frontend/assets/39902320/6a847f79-2411-4ca6-b828-eee3be8aaceb';
+const breadImageUrl = 'https://github.com/tarasehdave/frontend/assets/39902320/8023b996-7101-4eab-8ad9-5677be088b65';
+
+// Load images (you need to implement this function)
+const backgroundImg = new Image();
+backgroundImg.src = backgroundImageUrl;
+backgroundImg.onload = () => {
+    const fruitsImg = new Image();
+    fruitsImg.src = fruitsImageUrl;
+    fruitsImg.onload = () => {
+        const vegetablesImg = new Image();
+        vegetablesImg.src = vegetablesImageUrl;
+        vegetablesImg.onload = () => {
+            const breadImg = new Image();
+            breadImg.src = breadImageUrl;
+            breadImg.onload = () => {
+                // All images are loaded, initialize the background
+                const background = initBackground(canvas, backgroundImg, 2, 1, 0, 2, backgroundImg.width);
+            };
+        };
+    };
+};
