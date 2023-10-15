@@ -7,6 +7,7 @@ title: Grocery Store
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <style>
+font-family: "Times New Roman", "Georgia", "Verdana";
 .center-image {
     display: flex;
     justify-content: center;
@@ -17,12 +18,11 @@ title: Grocery Store
     max-width: 80%;
     max-height: 80%;
 }
-h1 {
-    font-family: "Times New Roman", "Georgia", "Verdana"; 
+h1 { 
     text-align: center;
 }
 header {
-    background-color: #333;
+    background-color: #f2e9e1;
     color: #fff;
     padding: 10px 0;
 }
@@ -40,17 +40,42 @@ nav ul li a {
     color: #fff;
     font-weight: bold;
 }
+.row {
+  display: flex;
+}
+.group {
+  text-align: center;
+  margin: 20px;
+  max-width: 30%;
+  max-height: 30%;
+}
+
 </style>
+<header>
+</header>
 <body>
     <h1>grocery store</h1>
     <div class="center-image">
         <img src="https://github.com/tarasehdave/frontend/assets/39902320/e911966c-fd54-4b0a-8e81-89d80f4d9b0e" alt="Centered Image">
     </div>
-    <header>
-    </header>
+    <div class="row">
+    <div class="group">
+        <img src="https://github.com/tarasehdave/frontend/assets/39902320/d5f2df5a-833d-4357-bf75-f82fbba3b424" alt="Fruits Image">
+        <h2>fruits</h2>
+    </div>
+    <div class="group">
+        <img src="https://github.com/tarasehdave/frontend/assets/39902320/6a847f79-2411-4ca6-b828-eee3be8aaceb" alt="Vegetables Image">
+        <h2>vegetables</h2>
+    </div>
+    <div class="group">
+        <img src="https://github.com/tarasehdave/frontend/assets/39902320/8023b996-7101-4eab-8ad9-5677be088b65" alt="Bread Image">
+        <h2>bread</h2>
+    </div>
+    </div>
 </body>
 </html>
 
+%%javascript
 import GameObject from './GameObject.js';
 
 export class Background extends GameObject {
