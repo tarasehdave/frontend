@@ -75,6 +75,7 @@ nav ul li a {
 </body>
 </html>
 
+%%javascript
 import GameObject from './GameObject.js';
 
 export class Background extends GameObject {
