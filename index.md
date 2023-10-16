@@ -22,7 +22,7 @@ h1 {
     text-align: center;
 }
 header {
-    background-color: #333;
+    background-color: #f2e9e1;
     color: #fff;
     padding: 10px 0;
 }
@@ -41,16 +41,17 @@ nav ul li a {
     font-weight: bold;
 }
 </style>
+<header>
+    </header>
 <body>
     <h1>grocery store</h1>
     <div class="center-image">
         <img src="https://github.com/tarasehdave/frontend/assets/39902320/e911966c-fd54-4b0a-8e81-89d80f4d9b0e" alt="Centered Image">
     </div>
-    <header>
-    </header>
 </body>
 </html>
 
+%%javascript
 import GameObject from './GameObject.js';
 
 export class Background extends GameObject {
