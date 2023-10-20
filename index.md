@@ -295,4 +295,39 @@ backgroundImg.onerror = handleImageError;
 function handleImageError(event) {
     console.error('Error loading image:', event.target.src);
 }
+
+// Get canvas element
+const canvas = document.getElementById('canvas');
+
+// Load background image
+const backgroundImg = new Image();
+backgroundImg.src = 'path/to/your/background-image.jpg';
+
+backgroundImg.onload = () => {
+    // Initialize the background object
+    const background = new GameObject(canvas, backgroundImg, 2, 1);
+
+    // Game loop function
+    function gameLoop() {
+        // Update the game objects
+        background.update();
+
+        // Clear the canvas
+        background.ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Draw the game objects
+        background.draw();
+
+        // Request the next frame
+        requestAnimationFrame(gameLoop);
+    }
+
+    // Start the game loop
+    gameLoop();
+};
+
+// Handle error for background image
+backgroundImg.onerror = handleImageError;
+
+// ... (loading other images and handling their errors)
 </script>

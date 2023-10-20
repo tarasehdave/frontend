@@ -20,3 +20,32 @@ export default class GameObject {
         this.ctx.drawImage(this.image, this.x, this.y);
     }
 }
+
+export default class GameObject {
+    constructor(canvas, image, gameSpeed, speedRatio) {
+        // ... (constructor code from the provided GameObject class)
+    }
+
+    update() {
+        // ... (update logic for your game objects, if needed)
+    }
+
+    draw() {
+        // ... (drawing logic for your game objects)
+    }
+}
+
+// Game loop code
+const background = new GameObject(canvas, backgroundImg, 2, 1);
+
+function gameLoop() {
+    // ... (game loop logic from the provided gameLoop function)
+}
+
+backgroundImg.onload = () => {
+    // ... (image load logic from your existing code)
+    gameLoop();
+};
+
+backgroundImg.onerror = handleImageError;
+// ... (loading other images and handling their errors)
