@@ -2,36 +2,30 @@ export default class GameObject {
     constructor(canvas, image, gameSpeed, speedRatio) {
         this.canvas = canvas;
         this.image = image;
-        this.speed = gameSpeed * speedRatio; // Adjust speed based on the speed ratio
+        this.speed = 2;
         this.x = 0; // Initial x-coordinate
         this.y = 0; // Initial y-coordinate
-        this.width = image.width; // Width of the object (assuming the image has a width property)
-        this.height = image.height; // Height of the object (assuming the image has a height property)
+        this.width = 920; 
+        this.height = 360; 
         this.ctx = canvas.getContext('2d'); // Canvas 2D rendering context
     }
 
     update() {
-        // Update the object's properties here if needed
-        // For example, update the x-coordinate to move the object
+        // Update the x-coordinate to move the object horizontally
+        this.x -= this.speed;
+
+        // If the object is completely off the screen, reset its position
+        if (this.x <= -this.width) {
+            this.x = 0;
+        }
     }
 
     draw() {
-        // Draw the object on the canvas using its image and coordinates
+        // Draw the object on the canvas using its image and updated coordinates
         this.ctx.drawImage(this.image, this.x, this.y);
-    }
-}
-
-export default class GameObject {
-    constructor(canvas, image, gameSpeed, speedRatio) {
-        // ... (constructor code from the provided GameObject class)
-    }
-
-    update() {
-        // ... (update logic for your game objects, if needed)
-    }
-
-    draw() {
-        // ... (drawing logic for your game objects)
+        
+        // Draw a second image to create a looping effect
+        this.ctx.drawImage(this.image, this.x + this.width, this.y);
     }
 }
 
