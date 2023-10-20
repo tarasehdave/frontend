@@ -29,15 +29,33 @@ export default class GameObject {
     }
 }
 
-// Game loop code
-const background = new GameObject(canvas, backgroundImg, 2, 1);
+// Get canvas element
+const canvas = document.getElementById('canvas');
 
-function gameLoop() {
-    // ... (game loop logic from the provided gameLoop function)
-}
+// Load background image
+const backgroundImg = new Image();
+backgroundImg.src = 'path/to/your/background-image.jpg';
 
 backgroundImg.onload = () => {
-    // ... (image load logic from your existing code)
+    // Initialize the background object
+    const background = new GameObject(canvas, backgroundImg, 2, 1);
+
+    // Game loop function
+    function gameLoop() {
+        // Update the game objects
+        background.update();
+
+        // Clear the canvas
+        background.ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Draw the game objects
+        background.draw();
+
+        // Request the next frame
+        requestAnimationFrame(gameLoop);
+    }
+
+    // Start the game loop
     gameLoop();
 };
 
