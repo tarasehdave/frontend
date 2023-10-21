@@ -2,7 +2,7 @@
 layout: default
 title: Grocery Store
 ---
-
+<!--
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -72,6 +72,28 @@ title: Grocery Store
             top: 50%; 
             left: 50%; 
             transform: translate(-50%, 50%); 
+        }
+                body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .background {
+            width: 200vw;
+            height: 100vh;
+            background: url('https://user-images.githubusercontent.com/115954616/275579364-e2731695-21fc-4dff-b4d1-d0ac01d9d549.jpeg') repeat-x;
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: scrollBackground 5s linear infinite;
+        }
+        @keyframes scrollBackground {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
         }
     </style>
 </head>
@@ -100,40 +122,7 @@ title: Grocery Store
             <h2 class="home-link">bread</h2>
         </div>
     </div>
-
-<head>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-        .background {
-            width: 200vw;
-            height: 100vh;
-            background: url('https://user-images.githubusercontent.com/115954616/275579364-e2731695-21fc-4dff-b4d1-d0ac01d9d549.jpeg') repeat-x;
-            position: absolute;
-            top: 0;
-            left: 0;
-            animation: scrollBackground 5s linear infinite;
-        }
-        @keyframes scrollBackground {
-            from {
-                transform: translateX(100%);
-            }
-            to {
-                transform: translateX(-100%);
-            }
-        }
-    </style>
-</head>
-
-
-<!--
----
-layout: default
-title: Grocery Store
----
+-->
 
 <html lang="en">
 <head>
@@ -204,6 +193,23 @@ title: Grocery Store
             top: 50%; 
             left: 50%; 
             transform: translate(-50%, 50%); 
+        }
+        .background {
+            width: 200vw;
+            height: 100vh;
+            background: url('https://user-images.githubusercontent.com/115954616/275579364-e2731695-21fc-4dff-b4d1-d0ac01d9d549.jpeg') repeat-x;
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: scrollBackground 5s linear infinite;
+        }
+        @keyframes scrollBackground {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
         }
     </style>
 </head>
