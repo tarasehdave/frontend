@@ -183,10 +183,10 @@ function initBackground(canvas, image, gameSpeed, speedRatio, initialXPosition, 
 const canvas = document.getElementById('canvas');
 
 // Actual Image URLS
-const backgroundImageUrl = 'https://github.com/tarasehdave/frontend/assets/115954616/e2731695-21fc-4dff-b4d1-d0ac01d9d549';
-const fruitsImageUrl = 'https://github.com/tarasehdave/frontend/assets/39902320/d5f2df5a-833d-4357-bf75-f82fbba3b424';
-const vegetablesImageUrl = 'https://github.com/tarasehdave/frontend/assets/39902320/6a847f79-2411-4ca6-b828-eee3be8aaceb';
-const breadImageUrl = 'https://github.com/tarasehdave/frontend/assets/39902320/8023b996-7101-4eab-8ad9-5677be088b65';
+const backgroundImageUrl = 'https://user-images.githubusercontent.com/115954616/275579364-e2731695-21fc-4dff-b4d1-d0ac01d9d549.jpeg';
+const fruitsImageUrl = 'https://user-images.githubusercontent.com/39902320/275380399-d5f2df5a-833d-4357-bf75-f82fbba3b424.png';
+const vegetablesImageUrl = 'https://user-images.githubusercontent.com/39902320/275383718-6a847f79-2411-4ca6-b828-eee3be8aaceb.png';
+const breadImageUrl = 'https://user-images.githubusercontent.com/39902320/275383787-8023b996-7101-4eab-8ad9-5677be088b65.png';
 
 const backgroundImg = new Image();
 backgroundImg.src = backgroundImageUrl;
