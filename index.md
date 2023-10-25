@@ -106,16 +106,22 @@ title: Grocery Store
     <div class="row">
     <div class="row">
         <div class="group">
-            <img src="https://github.com/tarasehdave/frontend/assets/39902320/d5f2df5a-833d-4357-bf75-f82fbba3b424" alt="Fruits Image">
-            <h2 class="home-link">fruits</h2>
+            <a href="fruits.md">
+                <img src="https://github.com/tarasehdave/frontend/assets/39902320/d5f2df5a-833d-4357-bf75-f82fbba3b424" alt="Fruits Image">
+                <h2 class="home-link">fruits</h2>
+            </a>
         </div>
         <div class="group">
-            <img src="https://github.com/tarasehdave/frontend/assets/39902320/6a847f79-2411-4ca6-b828-eee3be8aaceb" alt="Vegetables Image">
-            <h2 class="home-link">vegetables</h2>
+            <a href="vegetables.md">
+                <img src="https://github.com/tarasehdave/frontend/assets/39902320/6a847f79-2411-4ca6-b828-eee3be8aaceb">
+                <h2 class="home-link">vegetables</h2>
+            </a>
         </div>
         <div class="group">
-            <img src="https://github.com/tarasehdave/frontend/assets/39902320/8023b996-7101-4eab-8ad9-5677be088b65" alt="Bread Image">
-            <h2 class="home-link">bread</h2>
+            <a href="bread.md">
+                <img src="https://github.com/tarasehdave/frontend/assets/39902320/8023b996-7101-4eab-8ad9-5677be088b65" alt="bread Image">
+                <h2 class="home-link">bread</h2>
+            </a>
         </div>
     </div>
 </body>
