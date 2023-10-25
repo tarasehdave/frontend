@@ -125,7 +125,7 @@ title: Grocery Store
 
 import GameObject from '{{site.baseurl}}/assets/js/GameObject.js';
 
-export class Background extends GameObject {
+class Background extends GameObject {
     constructor(canvas, image, gameSpeed, speedRatio, initialXPosition, initialSpeed, initialWidth) {
         super(canvas, image, gameSpeed, speedRatio);
         this.x = initialXPosition; // Set the initial horizontal position of the background
@@ -143,7 +143,7 @@ export class Background extends GameObject {
     }
 }
 
-export function initBackground(canvas, image, gameSpeed, speedRatio, initialXPosition, initialSpeed, initialWidth) {
+function initBackground(canvas, image, gameSpeed, speedRatio, initialXPosition, initialSpeed, initialWidth) {
     // Build game object
     var background = new Background(canvas, image, gameSpeed, speedRatio, initialXPosition, initialSpeed, initialWidth);
 
@@ -199,20 +199,8 @@ backgroundImg.onload = () => {
             breadImg.onload = () => {
                 // Bread image loaded successfully
                 const background = initBackground(canvas, backgroundImg, 2, 1, 0, 2, backgroundImg.width);
-            };
-            // Handle error for bread image
-            breadImg.onerror = handleImageError;
-        };
-        // Handle error for vegetables image
-        vegetablesImg.onerror = handleImageError;
-    };
-    // Handle error for fruits image
-    fruitsImg.onerror = handleImageError;
-};
-// Handle error for background image
-backgroundImg.onerror = handleImageError;
-
-function handleImageError(event) {
-    console.error('Error loading image:', event.target.src);
+            }
+        }
+    }
 }
 </script>
