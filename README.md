@@ -108,4 +108,11 @@ make a readme for fronend**
 # Key files in Grocery Store Frontend
 - `index.md` this is the homepage of the site. When the user first opens the website, they will see a moving background image with a text box place on top of it. The text box will have details of what the site is about. When the user scrolls down on the homepaget there will be an image with it's corresponding category of the grocery store. These will be links that are leading to a place where the user can shop. 
 - `friuts.md`, `vegetables.md`, `bread.md` these are the files that will  be shown when the user clicks on the images/links on the homepage. They will be redirected to pages where they can buy different items
-- `inventory.md` this will be the shop all button on the navigation bar of the website. It will be the ocmplete inventory of everything on our grocery store, so that the user can shop for everything all at once. 
+## Navigation Bar
+- Pages are added to the navigation bar by adding them to the general main directory and working with backend.
+- `inventory.md` this will be the shop all button on the navigation bar of the website. It will be the complete inventory of everything on our grocery store, so that the user can shop for everything all at once. 
+- `2023-10-26-list_IPYNB_2_.md` shows a user their grocery list for items they plan on purchasing but haven't shopped for yet.
+# Githb Pages History/Timebox
+- Using `compsci.yml` and `_notebooks`, we designed a page to help the user understand our progress, plans, and specific code under hacks. Similar to the function of Issues in github, our timebox shows our accomplishments.
+## Project Plan
+- Contains anatomy of sliding screen feature of our website. Describes the our plan for the project and thinking that went into designing our code.
