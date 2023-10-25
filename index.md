@@ -84,7 +84,7 @@ title: Grocery Store
             left: 0;
             animation: scrollBackground 5s linear infinite;
         }
-        //keyframes scrolling background code
+        //keyframes scrolling background
         @keyframes scrollBackground {
             from {
                 transform: translateX(100%);
