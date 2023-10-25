@@ -105,3 +105,6 @@ bundle install
     - `_layouts`\schedule.html - this contains code, in the Liquid language, that generates the HTML for all the rows and columns.
     - fyi, the schedule.html could work for another type of page.  For instance, you could make a csa.md, _data/csa.yml, and tag files with `csa: {week: 0}` under courses.
 make a readme for fronend**
+# Key files in Grocery Store Frontend
+- `index.md` this is the homepage of the site. When the user first opens the website, they will see a moving background image with a text box place on top of it. The text box will have details of what the site is about. When the user scrolls down on the homepaget there will be an image with it's corresponding category of the grocery store. These will be links that are leading to a place where the user can shop. 
+- `friuts.md`, `vegetables.md`, `bread.md` these are the files that will  be shown when the user clicks on the images/links on the homepage. They will be redirected 
