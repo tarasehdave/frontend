@@ -103,7 +103,8 @@ title: Grocery Store
     </div>
     <div class="text-box">
         <h2>Grocery Store!</h2>
-        <p>We believe in Fresh and Organic. add more about blah blah blah</p>
+        <p>Where quality meets freshness</p>
+        <p>At our grocery store, we take pride in offering a wide array of fresh and organic products that not only nourish your body but also contribute to a healthier planet. We believe that what you eat matters, and that's why we go the extra mile to provide you with the best.</p>
     </div>
     <div class="row">
     <div class="row">
