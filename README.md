@@ -107,4 +107,5 @@ bundle install
 make a readme for fronend**
 # Key files in Grocery Store Frontend
 - `index.md` this is the homepage of the site. When the user first opens the website, they will see a moving background image with a text box place on top of it. The text box will have details of what the site is about. When the user scrolls down on the homepaget there will be an image with it's corresponding category of the grocery store. These will be links that are leading to a place where the user can shop. 
-- `friuts.md`, `vegetables.md`, `bread.md` these are the files that will  be shown when the user clicks on the images/links on the homepage. They will be redirected 
+- `friuts.md`, `vegetables.md`, `bread.md` these are the files that will  be shown when the user clicks on the images/links on the homepage. They will be redirected to pages where they can buy different items
+- `inventory.md` this will be the shop all button on the navigation bar of the website. It will be the ocmplete inventory of everything on our grocery store, so that the user can shop for everything all at once. 
