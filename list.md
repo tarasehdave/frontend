@@ -13,7 +13,7 @@ title: Grocery List
 
 <!-- Grocery List -->
 <ul id="groceryList">
-    <li></li>
+
 </ul>
 
 <!-- Add Item Form -->
