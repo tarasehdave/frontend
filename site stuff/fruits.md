@@ -89,7 +89,7 @@ title: Fruits
         </div>
     </div>
 </body>
-</html>
+
 
 fetch('http://localhost:8350/api/inventory/fruits')
   .then(response => response.json())
@@ -99,3 +99,6 @@ fetch('http://localhost:8350/api/inventory/fruits')
   .catch(error => {
     // Handle errors
   });
+
+</html>
+
