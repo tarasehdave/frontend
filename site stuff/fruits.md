@@ -90,3 +90,12 @@ title: Fruits
     </div>
 </body>
 </html>
+
+fetch('http://localhost:8350/api/inventory/fruits')
+  .then(response => response.json())
+  .then(data => {
+    // Process the data from the backend
+  })
+  .catch(error => {
+    // Handle errors
+  });
