@@ -115,7 +115,7 @@ title: Grocery Store
             </a>
         </div>
         <div class="group">
-            <a href="vegetables.md">
+            <a href="veg.html">
                 <img src="https://github.com/tarasehdave/frontend/assets/39902320/6a847f79-2411-4ca6-b828-eee3be8aaceb">
                 <h2 class="home-link">vegetables</h2>
             </a>
