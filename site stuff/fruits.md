@@ -5,6 +5,9 @@ title: Fruits
 
 
 <html lang="en">
+
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -89,16 +92,5 @@ title: Fruits
         </div>
     </div>
 </body>
-
-
-fetch('http://localhost:8350/api/inventory/fruits')
-  .then(response => response.json())
-  .then(data => {
-    // Process the data from the backend
-  })
-  .catch(error => {
-    // Handle errors
-  });
-
 </html>
 
