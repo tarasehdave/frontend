@@ -109,7 +109,7 @@ title: Grocery Store
     <div class="row">
     <div class="row">
         <div class="group">
-            <a href="fruits.md">
+            <a href="fruits.html">
                 <img src="https://github.com/tarasehdave/frontend/assets/39902320/d5f2df5a-833d-4357-bf75-f82fbba3b424" alt="Fruits Image">
                 <h2 class="home-link">fruits</h2>
             </a>
@@ -121,9 +121,9 @@ title: Grocery Store
             </a>
         </div>
         <div class="group">
-            <a href="bread.md">
+            <a href="grain.html">
                 <img src="https://github.com/tarasehdave/frontend/assets/39902320/8023b996-7101-4eab-8ad9-5677be088b65" alt="bread Image">
-                <h2 class="home-link">bread</h2>
+                <h2 class="home-link">grain</h2>
             </a>
         </div>
     </div>

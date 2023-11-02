@@ -1,15 +1,15 @@
 
 <head>
-    <title>Frontend Example</title>
-</head>
-<body>
-    <h1>Frontend Example</h1>
+    <title>Grain</title>
+  </head>
+  <body>
+    <h1>Grain</h1>
     <div id="data"></div>
-
+  
     <script>
         // Function to make the API request
         function fetchData() {
-            fetch('http://localhost:8350/api/inventory/fruits')
+            fetch('http://localhost:8350/api/inventory/grain')
                 .then(response => response.json())
                 .then(data => {
                     // Process the data from the backend
@@ -20,10 +20,11 @@
                     console.error('Error:', error);
                 });
         }
-
+  
         // Call the fetchData function when the page loads
         fetchData();
     </script>
-</body>
-</html>
-
+  </body>
+  </html>
+  
+  
