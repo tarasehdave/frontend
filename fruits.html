@@ -17,7 +17,49 @@
         body {
         font-family: "Verdana";
         }
+        header {
+        background-color: #f2e9e1;
+        color: #fff;
+        padding: 10px 0;
+        }
+        nav ul {
+        list-style: none;
+        padding: 30px;
+        text-align: right;
+                }
+        nav ul li {
+        display: inline;
+        margin-right: 20px;
+                }
+        nav ul li a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+                }
+        .logo {
+        float: left;
+        margin-left: 20px;
+        padding: 20px;
+        }
     </style>
+    <header class="site-header">
+        <div id="header">
+          <nav>
+            <div class="logo"><a href="{{site.baseurl}}/index.html"><img src="https://github.com/tarasehdave/frontend/assets/39902320/b45b109a-87a3-493c-af94-8a99ee47483f" width="150"></a></div>
+            <div class="links">
+              <ul>
+                <li class="fork"><a href="{{site.baseurl}}/index.html" style="color: #ab9784">Home</a></li>
+                <li class="fork"><a href="{{site.baseurl}}/user.html" style="color: #ab9784">User</a></li>
+                <li class="fork"><a href="{{ site.baseurl }}/inventory.html" style="color: #ab9784">Shop All</a></li>
+                <li class="fork"><a href="{{ site.baseurl }}/list.html" style="color: #ab9784">Grocery List</a></li>
+                <li class="title"><a href="#" style="color: #ab9784">Order</a></li>
+                <li class="fork"><a href="{{site.baseurl}}/compsci" style="color: #ab9784">Timebox</a></li>
+                <li class="title"><a href="{{ site.github.repository_url }}#readme" style="color: #ab9784">GitHub</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div><!-- end header -->
+      </header>
 </head>
 <body>
     <h1>Fruits</h1>
@@ -25,6 +67,7 @@
         <tr>
             <th>Product</th>
             <th>Price</th>
+            <th>Action</th>
         </tr>
         <tbody id="data"></tbody>
     </table>
@@ -63,6 +106,54 @@
 
         // Call the fetchData function when the page loads
         fetchData();
+        function fetchData() {
+            fetch('http://localhost:8350/api/inventory/fruits')
+                .then(response => response.json())
+                .then(data => {
+                    const tableBody = document.getElementById('data');
+
+                    if (data && Array.isArray(data.fruits)) {
+                        data.fruits.forEach(item => {
+                            const row = document.createElement('tr');
+                            const productCell = document.createElement('td');
+                            const priceCell = document.createElement('td');
+                            const actionCell = document.createElement('td'); // Create a new cell for the "Add to Cart" button
+
+                            productCell.textContent = item.name;
+                            priceCell.textContent = item.unitCost;
+
+                            // Create the "Add to Cart" button
+                            const addToCartButton = document.createElement('button');
+                            addToCartButton.textContent = 'Add to Cart';
+                            addToCartButton.addEventListener('click', () => {
+                                addToCart(item.name, item.unitCost); // Call the addToCart function when the button is clicked
+                            });
+
+                            actionCell.appendChild(addToCartButton);
+
+                            row.appendChild(productCell);
+                            row.appendChild(priceCell);
+                            row.appendChild(actionCell); // Add the "Add to Cart" button to the table row
+
+                            tableBody.appendChild(row);
+                        });
+                    } else {
+                        console.error('Data is not in the expected format:', data);
+                    }
+                })
+                .catch(error => {
+                    // Handle errors
+                    console.error('Error:', error);
+                });
+        }
+
+        // Call the fetchData function when the page loads
+        fetchData();
+
+        // Your existing addToCart function for interacting with the cart API
+        function addToCart(productName, price) {
+            // ...
+        }
     </script>
 </body>
 </html>
