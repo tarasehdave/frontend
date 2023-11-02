@@ -2,32 +2,59 @@
 layout: default
 title: User Login
 ---
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Login</title>
 </head>
-  <body>
+<body>
     <h1>User Login</h1>
-    <div id="data"></div>
+    <div id="login-form">
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <button type="button" onclick="login()">Login</button>
+        </form>
+    </div>
+    <p id="login-message"></p>
     <script>
-        // Function to make the API request
-        function fetchData() {
-            fetch('http://localhost:8350/api/login/login')
-                .then(response => response.json())
-                .then(data => {
-                    // Process the data from the backend
-                    document.getElementById('data').textContent = JSON.stringify(data, null, 2);
-                })
-                .catch(error => {
-                    // Handle errors
-                    console.error('Error:', error);
-                });
-        } // Call the fetchData function when the page loads
-        fetchData();
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Create a data object with the user's credentials
+            const loginData = {
+                username,
+                password
+            };
+
+            // Make a POST request to your login API
+            fetch('http://localhost:8350/api/login/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(loginData),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // If login is successful, display a success message
+                    document.getElementById('login-message').textContent = "Login successful. Welcome, " + username + "!";
+                } else {
+                    // If login fails, display an error message
+                    document.getElementById('login-message').textContent = "Invalid credentials. Please try again.";
+                }
+            })
+            .catch(error => {
+                // Handle errors
+                console.error('Error:', error);
+            });
+        }
     </script>
-  </body>
-  </html>
-  
+</body>
+</html>
