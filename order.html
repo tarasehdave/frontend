@@ -3,31 +3,56 @@ layout: default
 title: Order
 ---
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order</title>
+    <title>Order Summary</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
 </head>
-  <body>
-    <h1>Order</h1>
-    <div id="data"></div>
-    <script>
-        // Function to make the API request
-        function fetchData() {
-            fetch('http://localhost:8350/api/cart')
-                .then(response => response.json())
-                .then(data => {
-                    // Process the data from the backend
-                    document.getElementById('data').textContent = JSON.stringify(data, null, 2);
-                })
-                .catch(error => {
-                    // Handle errors
-                    console.error('Error:', error);
-                });
-        } // Call the fetchData function when the page loads
-        fetchData();
-    </script>
-  </body>
-  </html>
+<body>
+    <h1>Order Summary</h1>
+    <h2>Customer Information</h2>
+    <p><strong>Username:</strong> alishahussain</p>
+    <p><strong>Email:</strong> alishahussain1229@gmail.com</p>
+    <h2>Ordered Items</h2>
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+        <tr>
+            <td>Red Apples</td>
+            <td>$35.00</td>
+            <td>10lbs</td>
+        </tr>
+        <tr>
+            <td>Carrots</td>
+            <td>$2.75</td>
+            <td>1lbs</td>
+        </tr>
+        <tr>
+            <td>Basmati Rice</td>
+            <td>$35</td>
+            <td>10lbs</td>
+        </tr>
+        <!-- Add more ordered items as needed -->
+    </table>
+    <h2>Total Price</h2>
+    <p><strong>Total:</strong> $72.75</p>
+    <button>Order!</button>
+</body>
+</html>
   
