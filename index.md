@@ -127,5 +127,3 @@ title: Grocery Store
             </a>
         </div>
     </div>
-</body>
-</html>
