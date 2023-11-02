@@ -1,26 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fruits</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
 </head>
-  <body>
+<body>
     <h1>Fruits</h1>
-    <div id="data"></div>
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody id="data"></tbody>
+    </table>
+
     <script>
         // Function to make the API request
         function fetchData() {
             fetch('http://localhost:8350/api/inventory/fruits')
                 .then(response => response.json())
                 .then(data => {
-                    // Process the data from the backend
-                    document.getElementById('data').textContent = JSON.stringify(data, null, 2);
+                    // Process the data from the backend and populate the table
+                    const tableBody = document.getElementById('data');
+
+                    data.forEach(item => {
+                        const row = document.createElement('tr');
+                        const productCell = document.createElement('td');
+                        const priceCell = document.createElement('td');
+
+                        productCell.textContent = item.product;
+                        priceCell.textContent = item.price;
+
+                        row.appendChild(productCell);
+                        row.appendChild(priceCell);
+
+                        tableBody.appendChild(row);
+                    });
                 })
                 .catch(error => {
                     // Handle errors
                     console.error('Error:', error);
                 });
-        } // Call the fetchData function when the page loads
+        }
+        // Call the fetchData function when the page loads
         fetchData();
     </script>
-  </body>
-  </html>
-  
-  
+</body>
+</html>
