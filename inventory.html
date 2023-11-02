@@ -29,57 +29,20 @@ title: Shop All
     <table>
         <tr>
             <th>Number</th>
-            <th>Category</th>
+            <th>Category Link</th>
         </tr>
         <tr>
             <td>1</td>
-            <td>Fruits</td>
+            <td><a href="fruits.html">Fruits</a></td>
         </tr>
         <tr>
             <td>2</td>
-            <td>Vegetables</td>
+            <td><a href="veg.html">Vegetables</a></td>
         </tr>
         <tr>
             <td>3</td>
-            <td>Grain</td>
+            <td><a href="grain.html">Grain</a></td>
         </tr>
-        <tbody id="data"></tbody>
     </table>
-
-    <script>
-        // Function to make the API request and populate the table
-        function fetchData() {
-            fetch('http://localhost:8350/api/inventory/categories')
-                .then(response => response.json())
-                .then(data => {
-                    const tableBody = document.getElementById('data');
-
-                    if (data && Array.isArray(data.categories)) {
-                        data.categories.forEach(item => {
-                            const row = document.createElement('tr');
-                            const productCell = document.createElement('td');
-                            const priceCell = document.createElement('td');
-
-                            productCell.textContent = item.name;
-                            priceCell.textContent = item.unitCost;
-
-                            row.appendChild(productCell);
-                            row.appendChild(priceCell);
-
-                            tableBody.appendChild(row);
-                        });
-                    } else {
-                        console.error('Data is not in the expected format:', data);
-                    }
-                })
-                .catch(error => {
-                    // Handle errors
-                    console.error('Error:', error);
-                });
-        }
-
-        // Call the fetchData function when the page loads
-        fetchData();
-    </script>
 </body>
 </html>
