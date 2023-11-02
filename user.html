@@ -1,4 +1,12 @@
+---
+layout: default
+title: User Login
+---
+
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Login</title>
 </head>
   <body>
@@ -7,7 +15,7 @@
     <script>
         // Function to make the API request
         function fetchData() {
-            fetch('http://localhost:8350/api/user')
+            fetch('http://localhost:8350/api/login/login')
                 .then(response => response.json())
                 .then(data => {
                     // Process the data from the backend

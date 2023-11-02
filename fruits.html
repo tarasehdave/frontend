@@ -19,43 +19,45 @@
 <body>
     <h1>Fruits</h1>
     <table>
-        <thead>
-            <tr>
-                <th>Product</th>
-                <th>Price</th>
-            </tr>
-        </thead>
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+        </tr>
         <tbody id="data"></tbody>
     </table>
 
     <script>
-        // Function to make the API request
+        // Function to make the API request and populate the table
         function fetchData() {
             fetch('http://localhost:8350/api/inventory/fruits')
                 .then(response => response.json())
                 .then(data => {
-                    // Process the data from the backend and populate the table
                     const tableBody = document.getElementById('data');
 
-                    data.forEach(item => {
-                        const row = document.createElement('tr');
-                        const productCell = document.createElement('td');
-                        const priceCell = document.createElement('td');
+                    if (data && Array.isArray(data.fruits)) {
+                        data.fruits.forEach(item => {
+                            const row = document.createElement('tr');
+                            const productCell = document.createElement('td');
+                            const priceCell = document.createElement('td');
 
-                        productCell.textContent = item.product;
-                        priceCell.textContent = item.price;
+                            productCell.textContent = item.name;
+                            priceCell.textContent = item.unitCost;
 
-                        row.appendChild(productCell);
-                        row.appendChild(priceCell);
+                            row.appendChild(productCell);
+                            row.appendChild(priceCell);
 
-                        tableBody.appendChild(row);
-                    });
+                            tableBody.appendChild(row);
+                        });
+                    } else {
+                        console.error('Data is not in the expected format:', data);
+                    }
                 })
                 .catch(error => {
                     // Handle errors
                     console.error('Error:', error);
                 });
         }
+
         // Call the fetchData function when the page loads
         fetchData();
     </script>
