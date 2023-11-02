@@ -17,43 +17,29 @@ title: User Login
             <input type="text" id="username" name="username" required><br><br>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required><br><br>
-            <button type="button" onclick="login()">Login</button>
+            <button type="button" onclick="checkCredentials()">Login</button>
         </form>
     </div>
     <p id="login-message"></p>
     <script>
-        function login() {
+        // Predefined usernames and passwords from the backend
+        const userCredentials = {
+            "sharonkodali": "pears",
+            "tarasehdave": "apples",
+            "alishahussain": "trees"
+        };
+
+        function checkCredentials() {
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
 
-            // Create a data object with the user's credentials
-            const loginData = {
-                username,
-                password
-            };
-
-            // Make a POST request to your login API
-            fetch('http://localhost:8350/api/login/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(loginData),
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    // If login is successful, display a success message
-                    document.getElementById('login-message').textContent = "Login successful. Welcome, " + username + "!";
-                } else {
-                    // If login fails, display an error message
-                    document.getElementById('login-message').textContent = "Invalid credentials. Please try again.";
-                }
-            })
-            .catch(error => {
-                // Handle errors
-                console.error('Error:', error);
-            });
+            if (userCredentials.hasOwnProperty(username) && userCredentials[username] === password) {
+                // If the entered credentials match, display a success message
+                document.getElementById('login-message').textContent = "Login successful. Welcome, " + username + "!";
+            } else {
+                // If the credentials do not match, display an error message
+                document.getElementById('login-message').textContent = "Invalid credentials. Please try again.";
+            }
         }
     </script>
 </body>

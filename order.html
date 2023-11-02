@@ -1,0 +1,33 @@
+---
+layout: default
+title: Order
+---
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+</head>
+  <body>
+    <h1>Order</h1>
+    <div id="data"></div>
+    <script>
+        // Function to make the API request
+        function fetchData() {
+            fetch('http://localhost:8350/api/cart')
+                .then(response => response.json())
+                .then(data => {
+                    // Process the data from the backend
+                    document.getElementById('data').textContent = JSON.stringify(data, null, 2);
+                })
+                .catch(error => {
+                    // Handle errors
+                    console.error('Error:', error);
+                });
+        } // Call the fetchData function when the page loads
+        fetchData();
+    </script>
+  </body>
+  </html>
+  
