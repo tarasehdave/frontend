@@ -102,9 +102,9 @@ title: Grocery Store
         <img src="https://github.com/tarasehdave/frontend/assets/39902320/e911966c-fd54-4b0a-8e81-89d80f4d9b0e" alt="Centered Image">
     </div>
     <div class="text-box">
-        <h2>Grocery Store!</h2>
+        <h2>FreshCart!</h2>
         <p>Where quality meets freshness</p>
-        <p>At our grocery store, we take pride in offering a wide array of fresh and organic products that not only nourish your body but also contribute to a healthier planet. We believe that what you eat matters, and that's why we go the extra mile to provide you with the best.</p>
+        <p>At FreshCart, we take pride in offering a wide array of fresh and organic products that not only nourish your body but also contribute to a healthier planet. We believe that what you eat matters, and that's why we go the extra mile to provide you with the best.</p>
     </div>
     <div class="row">
     <div class="row">
